@@ -1,0 +1,73 @@
+{% extends 'app/main_tlo.html' %} 
+
+{% block content %}
+
+        {% if user.profile.zweryfikowany == True %}
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <center>
+                        <img src="https://i.ibb.co/gwDkfXh/1.png" class="d-block h-100" alt="...">                    </center>
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <center>
+                        <img src="https://i.ibb.co/HxW8VvV/3.png" class="d-block h-100" alt="...">                    </center>
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <center>
+                        <img src="https://i.ibb.co/CV7GYsJ/2.png" class="d-block h-100" alt="...">                    </center>
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                    </div>
+                </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+                </a>
+            </div>
+            {% else %}
+            <div class="row">
+                <div style="margin-left: 40px;">
+                    <p>Twoje zgłoszenie czeka na przeanalizowanie przez naszych administratorów. Prosimy o cierpliwość.</p>
+                </div>
+
+                <div class="col-11" style="text-align: center">
+                    <b>Wzór</b>
+                    <br>
+                    <img src="{{request.user.profile.wzor.url}}" width="200" height="200" alt="avatar">
+                </div>
+
+                <div class="col-11" style="text-align: center; margin-top: 30px;">
+                    <b>Twoje zdjęcie</b>
+                    <br>
+                    <img src="{{request.user.profile.zdjecie.url}}" width="200" height="200" alt="avatar2">
+                </div>
+
+            </div>
+            {% endif %}
+
+
+            
+
+        
+
+{% endblock %}

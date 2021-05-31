@@ -1,0 +1,57 @@
+{% extends 'app/main_tlo.html' %} 
+
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+
+    <legend class="border-bottom mb-4">Ustawienia wyszukiwania</legend>
+    <div class="field edit">
+    <form method="post" enctype="multipart/form-data" style="color: white;">
+        
+
+
+        <div class="row" style="margin-left: 250px;">
+            <div class="col-2">
+                <label style="float: left; margin-top: 50px;">Miejscowość:</label>
+                <label style="float: left;margin-top: 70px;">Przedmiot:</label>
+                <label style="float: left; margin-top: 120px;">Cena:</label>
+
+            </div>
+
+            
+
+                <div class="textbox" style="font-size: large;position: absolute; margin-left: 150px; margin-top: 50px;">
+                    
+                    {{ profile_settings_form.miejscowosc }}
+                </div>
+
+
+
+                <div class="textbox" style="width: 60%; font-size: large;margin-left: 40px;">
+                    <br><br>
+                    {{ profile_settings_form.przedmiot }}
+                </div>
+
+           
+                <div class="textbox" style="width: 60%; font-size: large; margin-left: 110px; position: absolute; margin-top: 300px; ">
+                    
+                    
+                    {{ profile_settings_form.cena }}
+                </div>
+
+            
+
+
+        </div>
+            {% csrf_token %}
+            
+            
+
+            <p style="text-align: center; margin-top: 50px;"><input type="submit" onclick="editJs()" class="btn btn-success" value="Zapisz zmiany"></p>
+        
+        </form>
+        
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'app/main_tlo.html' %}
+
+{% block content %}
+
+<legend class="border-bottom mb-4">Zaproszenia do znajomych</legend>
+{% friends request.user %}
+
+{% endblock %}
